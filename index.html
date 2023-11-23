@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    const translations = [
+      {
+        "name": "Português",
+        "ptName": "Português",
+        "enName": "Portuguese",
+        "langKey": "pt",
+        "bibles": [
+          {
+            "name": "Almeida Corrigida Fiel",
+            "key": "acf",
+            "ptName": "Almeida Corrigida Fiel"
+          },
+          {
+            "name": "Almeida Revisada Imprensa Bíblica",
+            "key": "aa",
+            "ptName": "Almeida Revisada Imprensa Bíblica"
+          },
+          {
+            "name": "Almeida Revista e Atualizada",
+            "key": "ara",
+            "ptName": "Almeida Revista e Atualizada"
+          },
+          {
+            "name": "Almeida Revista e Corrigida",
+            "key": "arc",
+            "ptName": "Almeida Revista e Corrigida"
+          },
+          {
+            "name": "Almeida Revista e Corrigida 1969",
+            "key": "rc69",
+            "ptName": "Almeida Revista e Corrigida 1969"
+          },
+          {
+            "name": "Nova Almeida Atualizada",
+            "key": "naa",
+            "ptName": "Nova Almeida Atualizada"
+          },
+          {
+            "name": "Nova Tradução na Linguagem de Hoje",
+            "key": "ntlh",
+            "ptName": "Nova Tradução na Linguagem de Hoje"
+          },
+          {
+            "name": "Nova Versão Internacional",
+            "key": "nvi",
+            "ptName": "Nova Versão Internacional"
+          },
+          {
+            "name": "Nova Versão Transformadora",
+            "key": "nvt",
+            "ptName": "Nova Versão Transformadora"
+          },
+          {
+            "name": "Sociedade Bíblica Britânica",
+            "key": "tb",
+            "ptName": "Sociedade Bíblica Britânica"
+          },
+          {
+            "name": "Versão Católica",
+            "key": "vc",
+            "ptName": "Versão Católica"
+          }
+        ]
+      },
+      {
+        "name": "English",
+        "ptName": "Inglês",
+        "enName": "English",
+        "langKey": "en",
+        "bibles": [
+          {
+            "name": "A Conservative Version",
+            "key": "acv"
+          },
+          {
+            "name": "American King James Version",
+            "key": "akjv"
+          },
+          {
+            "name": "American Standard Version of the Holy Bible",
+            "key": "asv"
+          },
+          {
+            "name": "Bible in Basic English",
+            "key": "bbe"
+          },
+          {
+            "key": "bwe",
+            "name": "Bible in Worldwide English NT"
+          },
+          {
+            "key": "darby",
+            "name": "Darby Bible"
+          },
+          {
+            "key": "diaglot",
+            "name": "Diaglot NT - 1865"
+          },
+          {
+            "key": "dour",
+            "name": "Douay Rheims"
+          },
+          {
+            "key": "jubl2000",
+            "name": "English Jubilee 2000 Bible"
+          },
+          {
+            "key": "emtv",
+            "name": "English Majority Text Version"
+          },
+          {
+            "key": "gnv",
+            "name": "Geneva Bible"
+          },
+          {
+            "key": "isv",
+            "name": "ISV NT"
+          },
+          {
+            "key": "jps",
+            "name": "Jewish Publication Society AT"
+          },
+          {
+            "key": "wycliffe",
+            "name": "John Wycliffe Bible"
+          },
+          {
+            "key": "kj2000",
+            "name": "King James 2000"
+          },
+          {
+            "key": "kjv",
+            "name": "King James Version"
+          },
+          {
+            "key": "leeser",
+            "name": "Leeser Old Testament"
+          },
+          {
+            "key": "lont",
+            "name": "Living Oracles NT"
+          },
+          {
+            "key": "mkjv1962",
+            "name": "Modern KJV 1963"
+          },
+          {
+            "key": "mont",
+            "name": "Montgomery New Testament"
+          },
+          {
+            "key": "nheb",
+            "name": "New Heart English Bible"
+          },
+          {
+            "key": "niv",
+            "name": "New International Version"
+          },
+          {
+            "key": "nsb",
+            "name": "New Simplified Bible"
+          },
+          {
+            "key": "rwebster",
+            "name": "Revised 1833 Webster Version"
+          },
+          {
+            "key": "rsv",
+            "name": "Revised Standard Version"
+          },
+          {
+            "key": "engrv",
+            "name": "Revised Version 1885"
+          },
+          {
+            "key": "rylt",
+            "name": "Revised Young's Literal Translation NT"
+          },
+          {
+            "key": "roth",
+            "name": "Rotherham Version"
+          },
+          {
+            "key": "bom",
+            "name": "The Book of Mormon"
+          },
+          {
+            "key": "tce",
+            "name": "The Common Edition: New Testament"
+          },
+          {
+            "key": "leb",
+            "name": "The Lexham English Bible"
+          },
+          {
+            "key": "etheridge",
+            "name": "The Peschito Syriac New Testament"
+          },
+          {
+            "key": "rnt",
+            "name": "The Riverside New Testament"
+          },
+          {
+            "key": "ukjv",
+            "name": "Updated King James Version"
+          },
+          {
+            "key": "xxx",
+            "name": "VW-Edition 2006"
+          },
+          {
+            "key": "wbs",
+            "name": "Webster"
+          },
+          {
+            "key": "wesley",
+            "name": "Wesley's NT"
+          },
+          {
+            "key": "wmth",
+            "name": "Weymouth NT"
+          },
+          {
+            "key": "tyndale",
+            "name": "Willam Tyndale Bible"
+          },
+          {
+            "key": "web",
+            "name": "World English Bible"
+          },
+          {
+            "key": "webbe",
+            "name": "World English Bible British Edition"
+          },
+          {
+            "key": "wmb",
+            "name": "World Messianic Bible"
+          },
+          {
+            "key": "wmbbe",
+            "name": "World Messianic Bible British Edition"
+          },
+          {
+            "key": "ylt",
+            "name": "YLT"
+          }
+        ]
+      },
+      {
+        "name": "Español",
+        "ptName": "Espanhol",
+        "enName": "Spanish",
+        "langKey": "es",
+        "bibles": [
+          {
+            "key": "sev",
+            "name": "Las Sagradas Escrituras"
+          },
+          {
+            "key": "rv",
+            "name": "Reina Valera"
+          }
+        ]
+      },
+      {
+        "name": "Français",
+        "ptName": "Francês",
+        "enName": "French",
+        "langKey": "fr",
+        "bibles": [
+          {
+            "key": "bgnt1669",
+            "name": "Bible de Genève de 1669"
+          },
+          {
+            "key": "bm1844",
+            "name": "Bible Martin 1844"
+          },
+          {
+            "key": "frepgr",
+            "name": "Bible Perret-Gentil et Rilliet"
+          },
+          {
+            "key": "bdc",
+            "name": "Bible Pirot-Clamer"
+          },
+          {
+            "key": "frebbb",
+            "name": "French Bible Bovet Bonnet (1900)"
+          },
+          {
+            "key": "frdarb",
+            "name": "French Darby"
+          },
+          {
+            "key": "fren",
+            "name": "French Louis Segond"
+          },
+          {
+            "key": "kjf",
+            "name": "King James Française"
+          },
+          {
+            "key": "cramp23",
+            "name": "La Bible Augustin Crampon 1923"
+          },
+          {
+            "key": "apee",
+            "name": "La Bible de l'Épée"
+          },
+          {
+            "key": "sacc",
+            "name": "La Bible de Saci 1759"
+          },
+          {
+            "key": "bzkh",
+            "name": "La Bible de Zadoc Khan"
+          },
+          {
+            "key": "fill",
+            "name": "La Bible Fillion de Louis Claude Fillion"
+          },
+          {
+            "key": "ostv1996",
+            "name": "La Bible J.F. Ostervald 1996"
+          },
+          {
+            "key": "lsg",
+            "name": "Louis Segond"
+          },
+          {
+            "key": "martin",
+            "name": "Martin"
+          },
+          {
+            "key": "ostervald",
+            "name": "Ostervald"
+          }
+        ]
+      },
+      {
+        "name": "Deutsch",
+        "ptName": "Alemão",
+        "enName": "German",
+        "langKey": "de",
+        "bibles": [
+          {
+            "key": "amnt",
+            "name": "Abraham Meister NT"
+          },
+          {
+            "key": "albrecht1926",
+            "name": "Albrecht Bibel 1926"
+          },
+          {
+            "key": "almnt",
+            "name": "Alemannische Bibel NT"
+          },
+          {
+            "key": "gerben",
+            "name": "Bengel NT"
+          },
+          {
+            "key": "elb1871",
+            "name": "Elberfelder 1871"
+          },
+          {
+            "key": "elb1871nt",
+            "name": "Elberfelder 1871 NT Original"
+          },
+          {
+            "key": "elb1905",
+            "name": "Elberfelder 1905"
+          },
+          {
+            "key": "fb2004",
+            "name": "FreeBible2004"
+          },
+          {
+            "key": "ilgrde",
+            "name": "Interlinearübersetzung"
+          },
+          {
+            "key": "greb",
+            "name": "Johannes Greber 1936 NT"
+          },
+          {
+            "key": "knt",
+            "name": "Konkordantes NT"
+          },
+          {
+            "key": "vaness",
+            "name": "Leander van Ess, rev.2"
+          },
+          {
+            "key": "luth1545",
+            "name": "Luther 1545"
+          },
+          {
+            "key": "lut-1545-lh",
+            "name": "Luther 1545 (Letzte Hand)"
+          },
+          {
+            "key": "luth1912",
+            "name": "Luther 1912"
+          },
+          {
+            "key": "luth1912ap",
+            "name": "Luther 1912 - mit Apokryphen"
+          },
+          {
+            "key": "meng39",
+            "name": "Menge-Bibel"
+          },
+          {
+            "key": "gerneue",
+            "name": "Neue Evangelistische Übersetzung"
+          },
+          {
+            "key": "pat80",
+            "name": "Pattloch Bibel"
+          },
+          {
+            "key": "rei10ev",
+            "name": "Reinhardt 1910 Evangelien"
+          },
+          {
+            "key": "sch1951",
+            "name": "Schlachter 1951"
+          },
+          {
+            "key": "taf",
+            "name": "Tafelbibel"
+          },
+          {
+            "key": "textbibelat",
+            "name": "Textbibel"
+          },
+          {
+            "key": "textbibel",
+            "name": "Textbibel"
+          },
+          {
+            "key": "vlx3",
+            "name": "Volxbibel 3.0"
+          }
+        ]
+      },
+      {
+        "name": "עברית",
+        "ptName": "Hebraico",
+        "enName": "Hebrew",
+        "langKey": "he",
+        "bibles": [
+          {
+            "key": "alep",
+            "name": "Aleppo Codex"
+          },
+          {
+            "key": "bhs",
+            "name": "Biblia hebraica"
+          },
+          {
+            "key": "hebm",
+            "name": "Modern Hebrew Bible"
+          },
+          {
+            "key": "osmhb",
+            "name": "Open Scriptures Morphological Hebrew Bible"
+          },
+          {
+            "key": "wlc",
+            "name": "Westminster Leningrad Codex"
+          }
+        ]
+      },
+      {
+        "name": "Ελληνικά",
+        "ptName": "Grego",
+        "enName": "Greek",
+        "langKey": "el",
+        "bibles": [
+          {
+            "key": "greek",
+            "name": "Modern Greek"
+          },
+          {
+            "key": "receptus",
+            "name": "Textus Receptus"
+          }
+        ]
+      },
+      {
+        "name": "Lietuvių",
+        "ptName": "Lituano",
+        "enName": "Lithuanian",
+        "langKey": "lt",
+        "bibles": [
+          {
+            "key": "lt",
+            "name": "Lithuanian"
+          }
+        ]
+      },
+      {
+        "name": "Afrikaans",
+        "ptName": "Africâner",
+        "enName": "Afrikaans",
+        "langKey": "af",
+        "bibles": [
+          {
+            "key": "afr3353",
+            "name": "1933/1953 Afrikaans Bybel"
+          }
+        ]
+      },
+      {
+        "name": "العربية",
+        "ptName": "Árabe",
+        "enName": "Arabic",
+        "langKey": "ar",
+        "bibles": [
+          {
+            "key": "arasvd",
+            "name": "Smith Van Dyke Arabic Bible"
+          }
+        ]
+      },
+      {
+        "name": "Български",
+        "ptName": "Búlgaro",
+        "enName": "Bulgarian",
+        "langKey": "bg",
+        "bibles": [
+          {
+            "key": "bulcarigradnt",
+            "name": "Tsarigrad Edition"
+          },
+          {
+            "key": "bulveren",
+            "name": "Veren's Contemporary Bible"
+          }
+        ]
+      },
+      {
+        "name": "Chamoru",
+        "ptName": "Chamorro",
+        "enName": "Chamorro",
+        "langKey": "ch",
+        "bibles": [
+          {
+            "key": "chamorro",
+            "name": "Chamorro: Y Santa Biblia (1908)"
+          }
+        ]
+      },
+      {
+        "name": "Čeština",
+        "ptName": "Tcheco",
+        "enName": "Czech",
+        "langKey": "cs",
+        "bibles": [
+          {
+            "key": "czbkr",
+            "name": "Bible Kralicka"
+          },
+          {
+            "key": "czecep",
+            "name": "Ekumenicky Cesky Preklad"
+          }
+        ]
+      },
+      {
+        "name": "Esperanto",
+        "ptName": "Esperanto",
+        "enName": "Esperanto",
+        "langKey": "eo",
+        "bibles": [
+          {
+            "key": "esperanto",
+            "name": "Esperanto"
+          }
+        ]
+      },
+      {
+        "name": "Eesti",
+        "ptName": "Estoniano",
+        "enName": "Estonian",
+        "langKey": "et",
+        "bibles": [
+          {
+            "key": "estonian",
+            "name": "Estonian"
+          }
+        ]
+      },
+      {
+        "name": "Euskara",
+        "ptName": "Basco",
+        "enName": "Basque",
+        "langKey": "eu",
+        "bibles": [
+          {
+            "key": "basq1571",
+            "name": "Basque(Navarro-Labourdin)NT"
+          }
+        ]
+      },
+      {
+        "name": "Suomi",
+        "ptName": "Finlandês",
+        "enName": "Finnish",
+        "langKey": "fi",
+        "bibles": [
+          {
+            "key": "pr-1938",
+            "name": "Pyhä Raamattu"
+          },
+          {
+            "key": "pr",
+            "name": "Pyhä Raamattu"
+          }
+        ]
+      },
+      {
+        "name": "Gàidhlig",
+        "ptName": "Gaélico Escocês",
+        "enName": "Scottish Gaelic",
+        "langKey": "gd",
+        "bibles": [
+          {
+            "key": "gla2",
+            "name": "Gaelic Scripture (Manx Gaelic)"
+          }
+        ]
+      },
+      {
+        "name": "Kreyòl Ayisyen",
+        "ptName": "Haitiano",
+        "enName": "Haitian",
+        "langKey": "ht",
+        "bibles": [
+          {
+            "key": "hat",
+            "name": "Haitian Creole Version"
+          }
+        ]
+      },
+      {
+        "name": "Magyar",
+        "ptName": "Húngaro",
+        "enName": "Hungarian",
+        "langKey": "hu",
+        "bibles": [
+          {
+            "key": "hun",
+            "name": "Hungarian Version"
+          },
+          {
+            "key": "karoli",
+            "name": "Károli"
+          },
+          {
+            "key": "hunuj",
+            "name": "Magyar Újfordítású"
+          }
+        ]
+      },
+      {
+        "name": "Italiano",
+        "ptName": "Italiano",
+        "enName": "Italian",
+        "langKey": "it",
+        "bibles": [
+          {
+            "key": "itadio",
+            "name": "Giovanni Diodati Bibbia"
+          },
+          {
+            "key": "italian1",
+            "name": "Italian Version"
+          },
+          {
+            "key": "lnd-1991",
+            "name": "La Nuova Diodati 1991"
+          },
+          {
+            "key": "irv",
+            "name": "Riveduta"
+          }
+        ]
+      },
+      {
+        "name": "한국어",
+        "ptName": "Coreano",
+        "enName": "Korean",
+        "langKey": "ko",
+        "bibles": [
+          {
+            "key": "kor",
+            "name": "Korean Version"
+          }
+        ]
+      },
+      {
+        "name": "Latina",
+        "ptName": "Latim",
+        "enName": "Latin",
+        "langKey": "la",
+        "bibles": [
+          {
+            "key": "vulgata",
+            "name": "Biblia Sacra Vulgata"
+          },
+          {
+            "key": "clvul",
+            "name": "Clementine Vulgate"
+          },
+          {
+            "key": "nvla",
+            "name": "Nova Vulgata"
+          }
+        ]
+      },
+      {
+        "name": "Latviešu",
+        "ptName": "Letão",
+        "enName": "Latvian",
+        "langKey": "lv",
+        "bibles": [
+          {
+            "key": "latv",
+            "name": "Lativian Version"
+          }
+        ]
+      },
+      {
+        "name": "Māori",
+        "ptName": "Maori",
+        "enName": "Maori",
+        "langKey": "mi",
+        "bibles": [
+          {
+            "key": "mao",
+            "name": "Maori Version"
+          }
+        ]
+      },
+      {
+        "name": "မြန်မာ",
+        "ptName": "Birmanês",
+        "enName": "Burmese",
+        "langKey": "my",
+        "bibles": [
+          {
+            "key": "judson",
+            "name": "Judson - Myanmar/Burmse"
+          }
+        ]
+      },
+      {
+        "name": "Nederlands",
+        "ptName": "Holandês",
+        "enName": "Dutch",
+        "langKey": "nl",
+        "bibles": [
+          {
+            "key": "dutch",
+            "name": "Dutch"
+          }
+        ]
+      },
+      {
+        "name": "Norsk",
+        "ptName": "Norueguês",
+        "enName": "Norwegian",
+        "langKey": "no",
+        "bibles": [
+          {
+            "key": "dnb",
+            "name": "Det Norsk Bibelselskap"
+          },
+          {
+            "key": "nor",
+            "name": "Norwegian Version"
+          },
+          {
+            "key": "norsmb",
+            "name": "Studentmållagsbibelen frå 1921"
+          }
+        ]
+      },
+      {
+        "name": "Polski",
+        "ptName": "Polonês",
+        "enName": "Polish",
+        "langKey": "pl",
+        "bibles": [
+          {
+            "key": "poland",
+            "name": "Polska Biblia"
+          }
+        ]
+      },
+      {
+        "name": "Română",
+        "ptName": "Romeno",
+        "enName": "Romanian",
+        "langKey": "ro",
+        "bibles": [
+          {
+            "key": "cornilescu",
+            "name": "Cornilescu"
+          },
+          {
+            "key": "ru",
+            "name": "Rumanian Version"
+          }
+        ]
+      },
+      {
+        "name": "Русский",
+        "ptName": "Russo",
+        "enName": "Russian",
+        "langKey": "ru",
+        "bibles": [
+          {
+            "key": "rusvzh",
+            "name": "Russian New Testament Strongs"
+          },
+          {
+            "key": "russub",
+            "name": "Russian Version"
+          },
+          {
+            "key": "ukrub",
+            "name": "Ukrainian Version"
+          },
+          {
+            "key": "synodal",
+            "name": "Синодальный перевод (Synodal)"
+          }
+        ]
+      },
+      {
+        "name": "Shqip",
+        "ptName": "Albanês",
+        "enName": "Albanian",
+        "langKey": "sq",
+        "bibles": [
+          {
+            "key": "alb1",
+            "name": "Albanian Version"
+          }
+        ]
+      },
+      {
+        "name": "Svenska",
+        "ptName": "Sueco",
+        "enName": "Swedish",
+        "langKey": "sv",
+        "bibles": [
+          {
+            "key": "swefolk1998",
+            "name": "Svenska Folkbibeln (1998)"
+          },
+          {
+            "key": "svd",
+            "name": "Swedish 1917 Version"
+          }
+        ]
+      },
+      {
+        "name": "Kiswahili",
+        "ptName": "Suaíli",
+        "enName": "Swahili",
+        "langKey": "sw",
+        "bibles": [
+          {
+            "key": "swa",
+            "name": "Swahili NT"
+          }
+        ]
+      },
+      {
+        "name": "ไทย",
+        "ptName": "Tailandês",
+        "enName": "Thai",
+        "langKey": "th",
+        "bibles": [
+          {
+            "key": "kjvthai",
+            "name": "KJV-Thai"
+          }
+        ]
+      },
+      {
+        "name": "Tagalog",
+        "ptName": "Tagalo",
+        "enName": "Tagalog",
+        "langKey": "tl",
+        "bibles": [
+          {
+            "key": "tlgangbiblia",
+            "name": "Ang Dating Biblia"
+          }
+        ]
+      },
+      {
+        "name": "Türkçe",
+        "ptName": "Turco",
+        "enName": "Turkish",
+        "langKey": "tr",
+        "bibles": [
+          {
+            "key": "bb31",
+            "name": "Türkçe"
+          }
+        ]
+      },
+      {
+        "name": "Tiếng Việt",
+        "ptName": "Vietnamita",
+        "enName": "Vietnamese",
+        "langKey": "vi",
+        "bibles": [
+          {
+            "key": "vietnvb",
+            "name": "New Vietnamese Bible"
+          },
+          {
+            "key": "vie",
+            "name": "Tiếng Việt"
+          }
+        ]
+      },
+      {
+        "name": "中文",
+        "ptName": "Chinês",
+        "enName": "Chinese",
+        "langKey": "zh",
+        "bibles": [
+          {
+            "key": "cuv",
+            "name": "Chinese Union Version"
+          },
+          {
+            "key": "cuv-s",
+            "name": "Chinese Union Version Simplified"
+          },
+          {
+            "key": "cvs",
+            "name": "New Chinese Version Simplified"
+          }
+        ]
+      }
+    ];
+
+    translations
+  </script>
+
+  <style>
+    .group-select {
+      .languages {
+
+      }
+
+      .translations {
+
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="group-select">
+    <select id="languages" class="languages">
+      <option></option>
+    </select>
+    <select id="translations" class="translations">
+      <option></option>
+    </select>
+  </div>
+</body>
+
+</html>
