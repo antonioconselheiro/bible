@@ -2,6 +2,10 @@
 <html>
 
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.webmanifest">
+
   <script>
     const translations = [
       {
@@ -304,10 +308,6 @@
           {
             "key": "kjf",
             "name": "King James Française"
-          },
-          {
-            "key": "cramp23",
-            "name": "La Bible Augustin Crampon 1923"
           },
           {
             "key": "apee",
@@ -961,7 +961,30 @@
       }
     ];
 
-    translations
+    onload = () => {
+      const options = [];
+      translations.forEach(translation => {
+        options.push(`<option value="${translation.langKey}">${translation.name}</option>`);
+      });
+      
+      const languagesSelect = document.getElementById('languages');
+      languagesSelect.innerHTML = options.join('');
+
+      languagesSelect.onchange = () => {
+        const value = languagesSelect.value;
+        const translation = translations.find(translation => value === translation.langKey);
+        const options = [];
+        const translationsSelect = document.getElementById('translations');
+
+        translation.bibles.forEach(bible => {
+          options.push(`<option value="${bible.key}">${bible.name}</option>`);
+        });
+
+        translationsSelect.innerHTML = options.join('');
+      };
+
+      setTimeout(() => languagesSelect.onchange());
+    }
   </script>
 
   <style>
@@ -981,10 +1004,8 @@
 
   <div class="group-select">
     <select id="languages" class="languages">
-      <option></option>
     </select>
     <select id="translations" class="translations">
-      <option></option>
     </select>
   </div>
 </body>
