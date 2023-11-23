@@ -16,9 +16,6 @@ services:
       context: ../.
       dockerfile: ./.devcontainer/Dockerfile
     working_dir: /biblical-translations
-    ports:
-      - "9229:9229"
-      - "4200:4200"
     volumes:
       - ..:/biblical-translations:cached
       - /var/run/docker.sock:/var/run/docker.sock
