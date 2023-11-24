@@ -3,8 +3,8 @@
   "dockerComposeFile": [
     "docker-compose.yml"
   ],
-  "service": "biblical-translations-dev",
-	"workspaceFolder": "/biblical-translations",
+  "service": "bible-dev",
+	"workspaceFolder": "/bible",
 	"customizations": {
 		"vscode": {
 			"extensions": [

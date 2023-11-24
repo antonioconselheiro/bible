@@ -3,7 +3,7 @@ FROM node:20
 RUN npm install typescript nx -g
 RUN npm install npx -g --force
 
-WORKDIR /biblical-translations
+WORKDIR /bible
 
 COPY ./.gitconfig /root/.gitconfig
 COPY ./.ssh /root/.ssh

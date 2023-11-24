@@ -9,15 +9,15 @@ volumes:
       device: ./node_modules
 
 services:
-  biblical-translations-dev:
-    image: biblical-translations-dev
-    container_name: biblical-translations-dev
+  bible-dev:
+    image: bible-dev
+    container_name: bible-dev
     build:
       context: ../.
       dockerfile: ./.devcontainer/Dockerfile
-    working_dir: /biblical-translations
+    working_dir: /bible
     volumes:
-      - ..:/biblical-translations:cached
+      - ..:/bible:cached
       - /var/run/docker.sock:/var/run/docker.sock
-      - node_modules_vol:/biblical-translations/node_modules
+      - node_modules_vol:/bible/node_modules
     tty: true
