@@ -1043,12 +1043,12 @@
         
         //
         const languagesSelect = document.getElementById('languages');
+        const translationsSelect = document.getElementById('translations');
         languagesSelect.innerHTML = translationsOptions.join('');
         languagesSelect.onchange = () => {
           const value = languagesSelect.value;
           const translation = translations.find(translation => value === translation.langKey);
           const options = [];
-          const translationsSelect = document.getElementById('translations');
 
           translation.bibles.forEach(bible => {
             options.push(`<option value="${bible.key}">${bible.name}</option>`);
@@ -1076,7 +1076,6 @@
         };
 
         //
-        const translationsSelect = document.getElementById('translations');
         translationsSelect.onchange = () => {
           const lang = document.getElementById('languages').value;
           const tranlation = document.getElementById('translations').value;
@@ -1092,12 +1091,6 @@
           document.getElementById('versos').innerHTML = '';
         }
 
-        function loadBible(lang, tranlation) {
-          fetch(`/bible/src/bible-${lang}-${tranlation}.json`)
-            .then(response => response.json())
-            .then(bible => currentLoadedBible = bible);
-        }
-
         //
         const chapterInput = document.getElementById('chapter');
         chapterInput.onchange = () => {
@@ -1107,14 +1100,23 @@
 
           let html = '';
           foundBook.content[selectedChapter].forEach(verse => {
-            html += `<li><span class='n'>${verse.verse}</span>${verse.text}</li>`;
+            html += `<li><sup class='n'>${verse.verse}</sup>${verse.text}</li>`;
           });
           document.getElementById('versos').innerHTML = html;
         };
 
+        function loadBible(lang, tranlation) {
+          fetch(`/bible/src/bible-${lang}-${tranlation}.json`)
+            .then(response => response.json())
+            .then(bible => {
+              currentLoadedBible = bible;
+              chapterInput.onchange();
+            });
+        }
+
         setTimeout(() => {
           languagesSelect.onchange();
-          bookSelect.onchange();
+          translationsSelect.onchange();
         });
       }
     </script>
@@ -1125,6 +1127,7 @@
         padding: 1rem;
         box-sizing: border-box;
         background-color: #EEE;
+        font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
       }
 
       .group-select {
@@ -1143,6 +1146,17 @@
             margin-right: 1rem;
           }
         }
+      }
+
+      #versos {
+        text-align: justify;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      #versos sup {
+        margin-right: .5rem;
       }
     </style>
   </head>
