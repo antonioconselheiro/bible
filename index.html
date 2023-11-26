@@ -1060,7 +1060,7 @@
         const bookSelect = document.getElementById('book');
         const optionsBook = [];
         books.forEach(book => {
-          optionsBook.push(`<option value="${book.key}">${book.name}</option>`);
+          optionsBook.push(`<option value="${book.key}">${book.key}</option>`);
         });
 
         bookSelect.innerHTML = optionsBook.join('');
@@ -1107,7 +1107,7 @@
 
           let html = '';
           foundBook.content[selectedChapter].forEach(verse => {
-            html += `<option value="${book.key}">${book.key}</option>`;
+            html += `<li><span class='n'>${verse.verse}</span>${verse.text}</li>`;
           });
           document.getElementById('versos').innerHTML = html;
         };
