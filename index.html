@@ -1096,11 +1096,20 @@
         function loadBible(lang, tranlation) {
           fetch(`/bible/src/bible-${lang}-${tranlation}.json`)
             .then(response => response.json())
-            .then(bible => {
-              currentLoadedBible = bible;
-
-            });
+            .then(bible => currentLoadedBible = bible);
         }
+
+        //
+        const chapterSelect = document.getElementById('chapter');
+        chapterSelect.onchange = () => {
+          const bookKey = document.getElementById('book').value;
+          const foundBook = currentLoadedBible.content.find(book => book.key === bookKey);
+          let html = '';
+          foundBook.content.forEach(verse => {
+            html += `<option value="${book.key}">${book.name}</option>`;
+          });
+          document.getElementById('versos').innerHTML = html;
+        };
       }
     </script>
 
