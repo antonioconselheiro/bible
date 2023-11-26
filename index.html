@@ -994,16 +994,18 @@
         translationsSelect.onchange = () => {
           const lang = document.getElementById('languages');
           const tranlation = document.getElementById('translations');
-          fetch(`/src/bible-${lang}-${tranlation}.json`).then(bible => {
-            currentLoadedBible = bible;
+          fetch(`/src/bible-${lang}-${tranlation}.json`)
+            .then(response => response.body())
+            .then(bible => {
+              currentLoadedBible = bible;
 
-            const options = [];
-            currentLoadedBible.content.forEach(book => {
-              options.push(`<option value="${book.key}">${book.name}</option>`);
+              const options = [];
+              currentLoadedBible.content.forEach(book => {
+                options.push(`<option value="${book.key}">${book.name}</option>`);
+              });
+
+              translationsSelect.innerHTML = options.join('');
             });
-
-            translationsSelect.innerHTML = options.join('');
-          });
         };
 
       }
