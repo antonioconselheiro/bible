@@ -1007,7 +1007,7 @@
         }
 
         function loadBible(lang, tranlation) {
-          fetch(`/src/bible-${lang}-${tranlation}.json`)
+          fetch(`/bible/src/bible-${lang}-${tranlation}.json`)
             .then(response => response.json())
             .then(bible => {
               currentLoadedBible = bible;
