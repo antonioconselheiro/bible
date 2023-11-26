@@ -1056,7 +1056,6 @@
 
           translationsSelect.innerHTML = options.join('');
         };
-        setTimeout(() => languagesSelect.onchange());
 
         const bookSelect = document.getElementById('book');
         const optionsBook = [];
@@ -1112,6 +1111,11 @@
           });
           document.getElementById('versos').innerHTML = html;
         };
+
+        setTimeout(() => {
+          languagesSelect.onchange();
+          bookSelect.onchange();
+        });
       }
     </script>
 
