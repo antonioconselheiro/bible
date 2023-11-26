@@ -995,7 +995,7 @@
           const lang = document.getElementById('languages');
           const tranlation = document.getElementById('translations');
           fetch(`/src/bible-${lang}-${tranlation}.json`)
-            .then(response => response.body())
+            .then(response => response.json())
             .then(bible => {
               currentLoadedBible = bible;
 
