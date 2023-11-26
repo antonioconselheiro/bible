@@ -992,8 +992,21 @@
         //
         const translationsSelect = document.getElementById('languages');
         translationsSelect.onchange = () => {
-          const lang = document.getElementById('languages');
-          const tranlation = document.getElementById('translations');
+          const lang = document.getElementById('languages').value;
+          const tranlation = document.getElementById('translations').value;
+
+          if (lang && tranlation) {
+            loadBible(lang, tranlation);
+          } else {
+            cleanBible();
+          }
+        };
+
+        function cleanBible() {
+          document.getElementById('versos').children.remove();
+        }
+
+        function loadBible(lang, tranlation) {
           fetch(`/src/bible-${lang}-${tranlation}.json`)
             .then(response => response.json())
             .then(bible => {
@@ -1006,7 +1019,7 @@
 
               translationsSelect.innerHTML = options.join('');
             });
-        };
+        }
 
       }
     </script>
