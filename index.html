@@ -990,7 +990,7 @@
         setTimeout(() => languagesSelect.onchange());
 
         //
-        const translationsSelect = document.getElementById('languages');
+        const translationsSelect = document.getElementById('translations');
         translationsSelect.onchange = () => {
           const lang = document.getElementById('languages').value;
           const tranlation = document.getElementById('translations').value;
@@ -1028,7 +1028,8 @@
     <style>
       body {
         margin: 0;
-        padding: 0;
+        padding: 1rem;
+        box-sizing: border-box;
         background-color: #BBB;
       }
 
