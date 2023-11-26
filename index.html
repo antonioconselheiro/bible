@@ -1111,7 +1111,8 @@
             .then(bible => {
               currentLoadedBible = bible;
               chapterInput.onchange();
-            });
+            })
+            .catch(() => document.getElementById('versos').innerHTML = `Not Found`);
         }
 
         setTimeout(() => {
