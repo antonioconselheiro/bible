@@ -1018,6 +1018,8 @@
               });
 
               translationsSelect.innerHTML = options.join('');
+
+              document.getElementById('chapter').setAttribute('max', book.chapter);
             });
         }
 
@@ -1053,8 +1055,7 @@
     <div class="group-select">
       <select id="book">
       </select>
-      <select id="chapter">
-      </select>
+      <input type="number" id="chapter" />
     </div>
     <ul id="versos"></ul>
   </body>
