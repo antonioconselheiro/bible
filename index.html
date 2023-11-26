@@ -1100,13 +1100,15 @@
         }
 
         //
-        const chapterSelect = document.getElementById('chapter');
-        chapterSelect.onchange = () => {
+        const chapterInput = document.getElementById('chapter');
+        chapterInput.onchange = () => {
           const bookKey = document.getElementById('book').value;
           const foundBook = currentLoadedBible.content.find(book => book.key === bookKey);
+          const selectedChapter = Number(chapterInput.value) - 1;
+
           let html = '';
-          foundBook.content.forEach(verse => {
-            html += `<option value="${book.key}">${book.name}</option>`;
+          foundBook.content[selectedChapter].forEach(verse => {
+            html += `<option value="${book.key}">${book.key}</option>`;
           });
           document.getElementById('versos').innerHTML = html;
         };
