@@ -966,15 +966,84 @@
         }
       ];
 
+      const books = [
+        { "testament": "old", "key": "gn", "chapter": 50, "content": [] },
+        { "testament": "old", "key": "ex", "chapter": 40, "content": [] },
+        { "testament": "old", "key": "lv", "chapter": 27, "content": [] },
+        { "testament": "old", "key": "nm", "chapter": 36, "content": [] },
+        { "testament": "old", "key": "dt", "chapter": 34, "content": [] },
+        { "testament": "old", "key": "js", "chapter": 24, "content": [] },
+        { "testament": "old", "key": "jz", "chapter": 21, "content": [] },
+        { "testament": "old", "key": "rt", "chapter": 4, "content": [] },
+        { "testament": "old", "key": "1sm", "chapter": 31, "content": [] },
+        { "testament": "old", "key": "2sm", "chapter": 24, "content": [] },
+        { "testament": "old", "key": "1rs", "chapter": 22, "content": [] },
+        { "testament": "old", "key": "2rs", "chapter": 25, "content": [] },
+        { "testament": "old", "key": "1cr", "chapter": 29, "content": [] },
+        { "testament": "old", "key": "2cr", "chapter": 36, "content": [] },
+        { "testament": "old", "key": "ed", "chapter": 10, "content": [] },
+        { "testament": "old", "key": "ne", "chapter": 13, "content": [] },
+        { "testament": "old", "key": "et", "chapter": 10, "content": [] },
+        { "testament": "old", "key": "jó", "chapter": 42, "content": [] },
+        { "testament": "old", "key": "sl", "chapter": 150, "content": [] },
+        { "testament": "old", "key": "pv", "chapter": 31, "content": [] },
+        { "testament": "old", "key": "ec", "chapter": 12, "content": [] },
+        { "testament": "old", "key": "ct", "chapter": 8, "content": [] },
+        { "testament": "old", "key": "is", "chapter": 66, "content": [] },
+        { "testament": "old", "key": "jr", "chapter": 52, "content": [] },
+        { "testament": "old", "key": "lm", "chapter": 5, "content": [] },
+        { "testament": "old", "key": "ez", "chapter": 48, "content": [] },
+        { "testament": "old", "key": "dn", "chapter": 12, "content": [] },
+        { "testament": "old", "key": "os", "chapter": 14, "content": [] },
+        { "testament": "old", "key": "jl", "chapter": 3, "content": [] },
+        { "testament": "old", "key": "am", "chapter": 9, "content": [] },
+        { "testament": "old", "key": "ob", "chapter": 1, "content": [] },
+        { "testament": "old", "key": "jn", "chapter": 4, "content": [] },
+        { "testament": "old", "key": "mq", "chapter": 7, "content": [] },
+        { "testament": "old", "key": "na", "chapter": 3, "content": [] },
+        { "testament": "old", "key": "hc", "chapter": 3, "content": [] },
+        { "testament": "old", "key": "sf", "chapter": 3, "content": [] },
+        { "testament": "old", "key": "ag", "chapter": 2, "content": [] },
+        { "testament": "old", "key": "zc", "chapter": 14, "content": [] },
+        { "testament": "old", "key": "ml", "chapter": 4, "content": [] },
+        { "testament": "new", "key": "mt", "chapter": 28, "content": [] },
+        { "testament": "new", "key": "mc", "chapter": 16, "content": [] },
+        { "testament": "new", "key": "lc", "chapter": 24, "content": [] },
+        { "testament": "new", "key": "jo", "chapter": 21, "content": [] },
+        { "testament": "new", "key": "atos", "chapter": 28, "content": [] },
+        { "testament": "new", "key": "rm", "chapter": 16, "content": [] },
+        { "testament": "new", "key": "1co", "chapter": 16, "content": [] },
+        { "testament": "new", "key": "2co", "chapter": 13, "content": [] },
+        { "testament": "new", "key": "gl", "chapter": 6, "content": [] },
+        { "testament": "new", "key": "ef", "chapter": 6, "content": [] },
+        { "testament": "new", "key": "fp", "chapter": 4, "content": [] },
+        { "testament": "new", "key": "cl", "chapter": 4, "content": [] },
+        { "testament": "new", "key": "1ts", "chapter": 5, "content": [] },
+        { "testament": "new", "key": "2ts", "chapter": 3, "content": [] },
+        { "testament": "new", "key": "1tm", "chapter": 6, "content": [] },
+        { "testament": "new", "key": "2tm", "chapter": 4, "content": [] },
+        { "testament": "new", "key": "tt", "chapter": 3, "content": [] },
+        { "testament": "new", "key": "fm", "chapter": 1, "content": [] },
+        { "testament": "new", "key": "hb", "chapter": 13, "content": [] },
+        { "testament": "new", "key": "tg", "chapter": 5, "content": [] },
+        { "testament": "new", "key": "1pe", "chapter": 5, "content": [] },
+        { "testament": "new", "key": "2pe", "chapter": 3, "content": [] },
+        { "testament": "new", "key": "1jo", "chapter": 5, "content": [] },
+        { "testament": "new", "key": "2jo", "chapter": 1, "content": [] },
+        { "testament": "new", "key": "3jo", "chapter": 1, "content": [] },
+        { "testament": "new", "key": "jd", "chapter": 1, "content": [] },
+        { "testament": "new", "key": "ap", "chapter": 22, "content": [] }
+      ];
+
       onload = () => {
-        const options = [];
+        const translationsOptions = [];
         translations.forEach(translation => {
-          options.push(`<option value="${translation.langKey}">${translation.name}</option>`);
+          translationsOptions.push(`<option value="${translation.langKey}">${translation.name}</option>`);
         });
         
         //
         const languagesSelect = document.getElementById('languages');
-        languagesSelect.innerHTML = options.join('');
+        languagesSelect.innerHTML = translationsOptions.join('');
         languagesSelect.onchange = () => {
           const value = languagesSelect.value;
           const translation = translations.find(translation => value === translation.langKey);
@@ -988,6 +1057,24 @@
           translationsSelect.innerHTML = options.join('');
         };
         setTimeout(() => languagesSelect.onchange());
+
+        const bookSelect = document.getElementById('book');
+        const optionsBook = [];
+        books.forEach(book => {
+          optionsBook.push(`<option value="${book.key}">${book.name}</option>`);
+        });
+
+        bookSelect.innerHTML = optionsBook.join('');
+
+        //
+        bookSelect.onchange = () => {
+          const key = bookSelect.value;
+          const foundBook = books.find(book => book.key === key);
+
+          document
+            .getElementById('chapter')
+            .setAttribute('max', foundBook.chapter);
+        };
 
         //
         const translationsSelect = document.getElementById('translations');
@@ -1012,16 +1099,8 @@
             .then(bible => {
               currentLoadedBible = bible;
 
-              const options = [];
-              currentLoadedBible.content.forEach(book => {
-                options.push(`<option value="${book.key}">${book.name}</option>`);
-              });
-
-              translationsSelect.innerHTML = options.join('');
-              document.getElementById('chapter').setAttribute('max', book.chapter);
             });
         }
-
       }
     </script>
 
