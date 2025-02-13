@@ -1,13 +1,3 @@
-version: '3.9'
-
-volumes:
-  node_modules_vol:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ./node_modules
-
 services:
   bible-dev:
     image: bible-dev
@@ -18,6 +8,4 @@ services:
     working_dir: /bible
     volumes:
       - ..:/bible:cached
-      - /var/run/docker.sock:/var/run/docker.sock
-      - node_modules_vol:/bible/node_modules
     tty: true

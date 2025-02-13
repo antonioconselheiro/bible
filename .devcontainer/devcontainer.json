@@ -1,16 +1,16 @@
 {
-  "name": "Existing Docker Compose (Extend)",
+  "name": "Biblie Dev",
   "dockerComposeFile": [
     "docker-compose.yml"
   ],
   "service": "bible-dev",
 	"workspaceFolder": "/bible",
+	"postCreateCommand": "./.devcontainer/auth.sh",
 	"customizations": {
 		"vscode": {
 			"extensions": [
 				"ms-vscode.vscode-typescript-next",
 				"eamodio.gitlens",
-				"ms-azuretools.vscode-docker",
 				"manishsencha.readme-preview",
 				"PNiewiarowski.ob-theme"
 			]
