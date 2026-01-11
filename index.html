@@ -7,7 +7,7 @@
     <base href="/bible/">
 
     <script>
-      let currentLoadedBible = null;
+      let currentLoadedBook = null;
       const translations = [
         {
           "name": "Português",
@@ -966,6 +966,75 @@
         }
       ];
 
+      const keysMap = {
+        "gn": "GEN",
+        "ex": "EXO",
+        "lv": "LEV",
+        "nm": "NUM",
+        "dt": "DEU",
+        "js": "JOS",
+        "jz": "JUI",
+        "rt": "RUT",
+        "1sm": "1SM",
+        "2sm": "2SM",
+        "1rs": "1RS",
+        "2rs": "2RS",
+        "1cr": "1CR",
+        "2cr": "2CR",
+        "ed": "1ED",
+        "ne": "2ED",
+        "et": "1ET",
+        "jó": "JOB",
+        "sl": "1SL",
+        "pv": "PRO",
+        "ec": "ECL",
+        "ct": "CAN",
+        "is": "ISA",
+        "jr": "1JE",
+        "lm": "2JE",
+        "ez": "EZE",
+        "dn": "1DA",
+        "os": "OSE",
+        "jl": "JOE",
+        "am": "AMO",
+        "ob": "OBA",
+        "jn": "JON",
+        "mq": "MIQ",
+        "na": "NAU",
+        "hc": "HAB",
+        "sf": "SOF",
+        "ag": "AGE",
+        "zc": "ZAC",
+        "ml": "MAL",
+        "mt": "MAT",
+        "mc": "MAR",
+        "lc": "LUC",
+        "jo": "JOA",
+        "atos": "ATO",
+        "rm": "ROM",
+        "1co": "1CO",
+        "2co": "2CO",
+        "gl": "GAL",
+        "ef": "EFE",
+        "fp": "FIL",
+        "cl": "COL",
+        "1ts": "1TS",
+        "2ts": "2TS",
+        "1tm": "1TM",
+        "2tm": "2TM",
+        "tt": "TIT",
+        "fm": "FLM",
+        "hb": "HEB",
+        "tg": "TIA",
+        "1pe": "1PE",
+        "2pe": "2PE",
+        "1jo": "1JO",
+        "2jo": "2JO",
+        "3jo": "3JO",
+        "jd": "JUD",
+        "ap": "APO"
+      };
+
       const books = [
         { "testament": "old", "key": "gn", "chapter": 50, "content": [] },
         { "testament": "old", "key": "ex", "chapter": 40, "content": [] },
@@ -1068,20 +1137,30 @@
         //
         bookSelect.onchange = () => {
           const key = bookSelect.value;
-          const foundBook = books.find(book => book.key === key);
+          const foundOptions = books.find(book => book.key === key);
+          const lang = document.getElementById('languages').value;
+          const tranlation = document.getElementById('translations').value;
+          const bookKey = document.getElementById('book').value;
+
+          if (lang && tranlation && bookKey) {
+            loadBible(lang, tranlation, bookKey);
+          } else {
+            cleanBible();
+          }
 
           document
             .getElementById('chapter')
-            .setAttribute('max', foundBook.chapter);
+            .setAttribute('max', foundOptions.chapter);
         };
 
         //
         translationsSelect.onchange = () => {
           const lang = document.getElementById('languages').value;
           const tranlation = document.getElementById('translations').value;
+          const bookKey = document.getElementById('book').value;
 
-          if (lang && tranlation) {
-            loadBible(lang, tranlation);
+          if (lang && tranlation && bookKey) {
+            loadBible(lang, tranlation, bookKey);
           } else {
             cleanBible();
           }
@@ -1095,7 +1174,7 @@
         const chapterInput = document.getElementById('chapter');
         chapterInput.onchange = () => {
           const bookKey = document.getElementById('book').value;
-          const foundBook = currentLoadedBible.content.find(book => book.key === bookKey);
+          const foundBook = currentLoadedBook.content.find(book => book.key === bookKey);
           const selectedChapter = Number(chapterInput.value) - 1;
 
           let html = '';
@@ -1105,11 +1184,11 @@
           document.getElementById('versos').innerHTML = html;
         };
 
-        function loadBible(lang, tranlation) {
-          fetch(`/bible/src/bible-${lang}-${tranlation}.json`)
+        function loadBible(lang, tranlation, bookKey) {
+          fetch(`/bible/src/bible-${lang}-${tranlation}/${keysMap[bookKey]}.json`)
             .then(response => response.json())
-            .then(bible => {
-              currentLoadedBible = bible;
+            .then(book => {
+              currentLoadedBook = book;
               chapterInput.onchange();
             })
             .catch(() => document.getElementById('versos').innerHTML = `Not Found`);
