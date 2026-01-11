@@ -1174,11 +1174,10 @@
         const chapterInput = document.getElementById('chapter');
         chapterInput.onchange = () => {
           const bookKey = document.getElementById('book').value;
-          const foundBook = currentLoadedBook.content.find(book => book.key === bookKey);
           const selectedChapter = Number(chapterInput.value) - 1;
 
           let html = '';
-          foundBook.content[selectedChapter].forEach(verse => {
+          currentLoadedBook.chapters[selectedChapter].forEach(verse => {
             html += `<li><sup class='n'>${verse.verse}</sup>${verse.text}</li>`;
           });
           document.getElementById('versos').innerHTML = html;
