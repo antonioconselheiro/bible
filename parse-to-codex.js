@@ -87,7 +87,7 @@ const keysMap = {
   "ed": "1ED",
   "ne": "2ED",
   "et": "1ET",
-  "jó": "JOB",
+  "jo": "JOB",
   "sl": "1SL",
   "pv": "PRO",
   "ec": "ECL",
@@ -112,7 +112,7 @@ const keysMap = {
   "mt": "MAT",
   "mc": "MAR",
   "lc": "LUC",
-  "jo": "JOA",
+  "joao": "JOA",
   "atos": "ATO",
   "rm": "ROM",
   "1co": "1CO",
@@ -140,6 +140,12 @@ const keysMap = {
 async function start() {
   const itens = fs.readdirSync('./src');
   itens.forEach(async (item) => {
+    const stat = fs.statSync(`./src/${item}`)
+
+    if (stat.isDirectory()) {
+      return;
+    }
+
     const fileContent = fs.readFileSync(`./src/${item}`);
     const jsonContent = JSON.parse(fileContent);
     const newName = item.replace(/.json$/, '');
@@ -147,15 +153,16 @@ async function start() {
     fs.mkdirSync(`./src/${newName}`);
 
     const data = {};
-    jsonContent.content.forEach(async (book) => {
-      if (book.content.length) {
-        data[keysMap[book.key]] = defaultCodexMetadata[keysMap[book.key]];
-        fs.writeFileSync(`./src/${newName}/${keysMap[book.key]}.json`, JSON.stringify(book.content));
+    Object.keys(jsonContent).forEach(async (book) => {
+      if (jsonContent[book].length) {
+        data[keysMap[book]] = defaultCodexMetadata[keysMap[book]];
+        console.info(`:: writting ${book}, ${keysMap[book]} -> ./src/${newName}/${keysMap[book]}.json`);
+        fs.writeFileSync(`./src/${newName}/${keysMap[book]}.json`, JSON.stringify({chapters:jsonContent[book]}));
       }
     });
 
     fs.writeFileSync(`./src/${newName}/_.codex`, JSON.stringify({
-      "name": jsonContent.name,
+      "name": "",
       "language": language,
       "data": data
     }));
