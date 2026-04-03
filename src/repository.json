@@ -1,4 +1,192 @@
 {
+  "pt": {
+    "key": "pt",
+    "name": "Português",
+    "translations": {
+      "bible-pt-aa": {
+        "key": "bible-pt-aa",
+        "name": "Almeida Revisada Imprensa Bíblica"
+      },
+      "bible-pt-acf": {
+        "key": "bible-pt-acf",
+        "name": "Almeida Corrigida Fiel"
+      },
+      "bible-pt-naa": {
+        "key": "bible-pt-naa",
+        "name": "Nova Almeida Atualizada"
+      },
+      "bible-pt-ntlh": {
+        "key": "bible-pt-ntlh",
+        "name": "Nova Tradução na Linguagem de Hoje"
+      },
+      "bible-pt-nvi": {
+        "key": "bible-pt-nvi",
+        "name": "Nova Versão Internacional"
+      },
+      "bible-pt-nvt": {
+        "key": "bible-pt-nvt",
+        "name": "Nova Versão Transformadora"
+      },
+      "bible-pt-tb": {
+        "key": "bible-pt-tb",
+        "name": "Sociedade Bíblica Britânica"
+      },
+      "bible-pt-vc": {
+        "key": "bible-pt-vc",
+        "name": "Versão Católica"
+      }
+    }
+  },
+  "en": {
+    "key": "en",
+    "name": "English",
+    "translations": {
+      "bible-en-acv": {
+        "key": "bible-en-acv",
+        "name": "A Conservative Version"
+      },
+      "bible-en-akjv": {
+        "key": "bible-en-akjv",
+        "name": "American King James Version"
+      },
+      "bible-en-asv": {
+        "key": "bible-en-asv",
+        "name": "American Standard Version of the Holy Bible"
+      },
+      "bible-en-bbe": {
+        "key": "bible-en-bbe",
+        "name": "Bible in Basic English"
+      },
+      "bible-en-bom": {
+        "key": "bible-en-bom",
+        "name": "The Book of Mormon"
+      },
+      "bible-en-bwe": {
+        "key": "bible-en-bwe",
+        "name": "Bible in Worldwide English NT"
+      },
+      "bible-en-darby": {
+        "key": "bible-en-darby",
+        "name": "Darby Bible"
+      },
+      "bible-en-diaglot": {
+        "key": "bible-en-diaglot",
+        "name": "Diaglot NT - 1865"
+      },
+      "bible-en-dour": {
+        "key": "bible-en-dour",
+        "name": "Douay Rheims"
+      },
+      "bible-en-emtv": {
+        "key": "bible-en-emtv",
+        "name": "English Majority Text Version"
+      },
+      "bible-en-engrv": {
+        "key": "bible-en-engrv",
+        "name": "Revised Version 1885"
+      },
+      "bible-en-etheridge": {
+        "key": "bible-en-etheridge",
+        "name": "The Peschito Syriac New Testament"
+      },
+      "bible-en-gnv": {
+        "key": "bible-en-gnv",
+        "name": "Geneva Bible"
+      },
+      "bible-en-isv": {
+        "key": "bible-en-isv",
+        "name": "ISV NT"
+      },
+      "bible-en-jps": {
+        "key": "bible-en-jps",
+        "name": "Jewish Publication Society AT"
+      },
+      "bible-en-jubl2000": {
+        "key": "bible-en-jubl2000",
+        "name": "English Jubilee 2000 Bible"
+      },
+      "bible-en-kj2000": {
+        "key": "bible-en-kj2000",
+        "name": "King James 2000"
+      },
+      "bible-en-kjv": {
+        "key": "bible-en-kjv",
+        "name": "King James Version"
+      },
+      "bible-en-leb": {
+        "key": "bible-en-leb",
+        "name": "The Lexham English Bible"
+      },
+      "bible-en-leeser": {
+        "key": "bible-en-leeser",
+        "name": "Leeser Old Testament"
+      },
+      "bible-en-lont": {
+        "key": "bible-en-lont",
+        "name": "Living Oracles NT"
+      },
+      "bible-en-mkjv1962": {
+        "key": "bible-en-mkjv1962",
+        "name": "Modern KJV 1963"
+      },
+      "bible-en-mont": {
+        "key": "bible-en-mont",
+        "name": "Montgomery New Testament"
+      },
+      "bible-en-nheb": {
+        "key": "bible-en-nheb",
+        "name": "New Heart English Bible"
+      },
+      "bible-en-trigrinya-translation": {
+        "key": "bible-en-trigrinya-translation",
+        "name": "English Trigrinya Translation"
+      },
+      "bible-en-ukjv": {
+        "key": "bible-en-ukjv",
+        "name": "Updated King James Version"
+      },
+      "bible-en-wbs": {
+        "key": "bible-en-wbs",
+        "name": "Webster"
+      },
+      "bible-en-web": {
+        "key": "bible-en-web",
+        "name": "World English Bible"
+      },
+      "bible-en-webbe": {
+        "key": "bible-en-webbe",
+        "name": "World English Bible British Edition"
+      },
+      "bible-en-wesley": {
+        "key": "bible-en-wesley",
+        "name": "Wesley's NT"
+      },
+      "bible-en-wmb": {
+        "key": "bible-en-wmb",
+        "name": "World Messianic Bible"
+      },
+      "bible-en-wmbbe": {
+        "key": "bible-en-wmbbe",
+        "name": "World Messianic Bible British Edition"
+      },
+      "bible-en-wmth": {
+        "key": "bible-en-wmth",
+        "name": "Weymouth NT"
+      },
+      "bible-en-wycliffe": {
+        "key": "bible-en-wycliffe",
+        "name": "John Wycliffe Bible"
+      },
+      "bible-en-xxx": {
+        "key": "bible-en-xxx",
+        "name": "VW-Edition 2006"
+      },
+      "bible-en-ylt": {
+        "key": "bible-en-ylt",
+        "name": "YLT"
+      }
+    }
+  },
   "af": {
     "key": "af",
     "name": "Afrikaans",
@@ -170,156 +358,6 @@
       "bible-el-receptus": {
         "key": "bible-el-receptus",
         "name": "Textus Receptus"
-      }
-    }
-  },
-  "en": {
-    "key": "en",
-    "name": "English",
-    "translations": {
-      "bible-en-acv": {
-        "key": "bible-en-acv",
-        "name": "A Conservative Version"
-      },
-      "bible-en-akjv": {
-        "key": "bible-en-akjv",
-        "name": "American King James Version"
-      },
-      "bible-en-asv": {
-        "key": "bible-en-asv",
-        "name": "American Standard Version of the Holy Bible"
-      },
-      "bible-en-bbe": {
-        "key": "bible-en-bbe",
-        "name": "Bible in Basic English"
-      },
-      "bible-en-bom": {
-        "key": "bible-en-bom",
-        "name": "The Book of Mormon"
-      },
-      "bible-en-bwe": {
-        "key": "bible-en-bwe",
-        "name": "Bible in Worldwide English NT"
-      },
-      "bible-en-darby": {
-        "key": "bible-en-darby",
-        "name": "Darby Bible"
-      },
-      "bible-en-diaglot": {
-        "key": "bible-en-diaglot",
-        "name": "Diaglot NT - 1865"
-      },
-      "bible-en-dour": {
-        "key": "bible-en-dour",
-        "name": "Douay Rheims"
-      },
-      "bible-en-emtv": {
-        "key": "bible-en-emtv",
-        "name": "English Majority Text Version"
-      },
-      "bible-en-engrv": {
-        "key": "bible-en-engrv",
-        "name": "Revised Version 1885"
-      },
-      "bible-en-etheridge": {
-        "key": "bible-en-etheridge",
-        "name": "The Peschito Syriac New Testament"
-      },
-      "bible-en-gnv": {
-        "key": "bible-en-gnv",
-        "name": "Geneva Bible"
-      },
-      "bible-en-isv": {
-        "key": "bible-en-isv",
-        "name": "ISV NT"
-      },
-      "bible-en-jps": {
-        "key": "bible-en-jps",
-        "name": "Jewish Publication Society AT"
-      },
-      "bible-en-jubl2000": {
-        "key": "bible-en-jubl2000",
-        "name": "English Jubilee 2000 Bible"
-      },
-      "bible-en-kj2000": {
-        "key": "bible-en-kj2000",
-        "name": "King James 2000"
-      },
-      "bible-en-kjv": {
-        "key": "bible-en-kjv",
-        "name": "King James Version"
-      },
-      "bible-en-leb": {
-        "key": "bible-en-leb",
-        "name": "The Lexham English Bible"
-      },
-      "bible-en-leeser": {
-        "key": "bible-en-leeser",
-        "name": "Leeser Old Testament"
-      },
-      "bible-en-lont": {
-        "key": "bible-en-lont",
-        "name": "Living Oracles NT"
-      },
-      "bible-en-mkjv1962": {
-        "key": "bible-en-mkjv1962",
-        "name": "Modern KJV 1963"
-      },
-      "bible-en-mont": {
-        "key": "bible-en-mont",
-        "name": "Montgomery New Testament"
-      },
-      "bible-en-nheb": {
-        "key": "bible-en-nheb",
-        "name": "New Heart English Bible"
-      },
-      "bible-en-trigrinya-translation": {
-        "key": "bible-en-trigrinya-translation",
-        "name": "English Trigrinya Translation"
-      },
-      "bible-en-ukjv": {
-        "key": "bible-en-ukjv",
-        "name": "Updated King James Version"
-      },
-      "bible-en-wbs": {
-        "key": "bible-en-wbs",
-        "name": "Webster"
-      },
-      "bible-en-web": {
-        "key": "bible-en-web",
-        "name": "World English Bible"
-      },
-      "bible-en-webbe": {
-        "key": "bible-en-webbe",
-        "name": "World English Bible British Edition"
-      },
-      "bible-en-wesley": {
-        "key": "bible-en-wesley",
-        "name": "Wesley's NT"
-      },
-      "bible-en-wmb": {
-        "key": "bible-en-wmb",
-        "name": "World Messianic Bible"
-      },
-      "bible-en-wmbbe": {
-        "key": "bible-en-wmbbe",
-        "name": "World Messianic Bible British Edition"
-      },
-      "bible-en-wmth": {
-        "key": "bible-en-wmth",
-        "name": "Weymouth NT"
-      },
-      "bible-en-wycliffe": {
-        "key": "bible-en-wycliffe",
-        "name": "John Wycliffe Bible"
-      },
-      "bible-en-xxx": {
-        "key": "bible-en-xxx",
-        "name": "VW-Edition 2006"
-      },
-      "bible-en-ylt": {
-        "key": "bible-en-ylt",
-        "name": "YLT"
       }
     }
   },
@@ -644,44 +682,6 @@
       "bible-pl-poland": {
         "key": "bible-pl-poland",
         "name": "Polska Biblia"
-      }
-    }
-  },
-  "pt": {
-    "key": "pt",
-    "name": "Português",
-    "translations": {
-      "bible-pt-aa": {
-        "key": "bible-pt-aa",
-        "name": "Almeida Revisada Imprensa Bíblica"
-      },
-      "bible-pt-acf": {
-        "key": "bible-pt-acf",
-        "name": "Almeida Corrigida Fiel"
-      },
-      "bible-pt-naa": {
-        "key": "bible-pt-naa",
-        "name": "Nova Almeida Atualizada"
-      },
-      "bible-pt-ntlh": {
-        "key": "bible-pt-ntlh",
-        "name": "Nova Tradução na Linguagem de Hoje"
-      },
-      "bible-pt-nvi": {
-        "key": "bible-pt-nvi",
-        "name": "Nova Versão Internacional"
-      },
-      "bible-pt-nvt": {
-        "key": "bible-pt-nvt",
-        "name": "Nova Versão Transformadora"
-      },
-      "bible-pt-tb": {
-        "key": "bible-pt-tb",
-        "name": "Sociedade Bíblica Britânica"
-      },
-      "bible-pt-vc": {
-        "key": "bible-pt-vc",
-        "name": "Versão Católica"
       }
     }
   },
