@@ -1,5 +1,5 @@
 {
-  "name": "Biblie Dev",
+  "name": "Bible Dev",
   "dockerComposeFile": [
     "docker-compose.yml"
   ],
