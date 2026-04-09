@@ -197,6 +197,16 @@
       }
     }
   },
+  "am": {
+    "key": "am",
+    "name": "አማርኛ",
+    "translations": {
+      "bible-am-ethiopian-orthodox-tewahedo-church": {
+        "key": "bible-am-ethiopian-orthodox-tewahedo-church",
+        "name": "Ethiopian Orthodox Tewahedo Church"
+      }
+    }
+  },
   "ar": {
     "key": "ar",
     "name": "العربية",
@@ -762,6 +772,16 @@
       "bible-th-kjvthai": {
         "key": "bible-th-kjvthai",
         "name": "KJV-Thai"
+      }
+    }
+  },
+  "tir": {
+    "key": "tir",
+    "name": "ትግርኛ",
+    "translations": {
+      "bible-tir-eritrean-orthodox-tewahedo-church": {
+        "key": "bible-tir-eritrean-orthodox-tewahedo-church",
+        "name": "Eritrean Orthodox Tewahedo Church"
       }
     }
   },
