@@ -368,6 +368,10 @@
       "bible-el-receptus": {
         "key": "bible-el-receptus",
         "name": "Textus Receptus"
+      },
+      "bible-el-elzeviriana": {
+        "key": "bible-el-elzeviriana",
+        "name": "Greek Elzeviriana"
       }
     }
   },
@@ -513,6 +517,16 @@
       }
     }
   },
+  "gez": {
+    "key": "gez",
+    "name": "Gəʿəz",
+    "translations": {
+      "bible-gez-mashafa-qeddus": {
+        "key": "bible-gez-mashafa-qeddus",
+        "name": "Gə'əz Mashafa Qeddus"
+      }
+    }
+  },
   "he": {
     "key": "he",
     "name": "עברית",
@@ -536,6 +550,10 @@
       "bible-he-wlc": {
         "key": "bible-he-wlc",
         "name": "Westminster Leningrad Codex"
+      },
+      "bible-he-stuttgartensia": {
+        "key": "bible-he-stuttgartensia",
+        "name": "Hebrew Stuttgartensia"
       }
     }
   },
