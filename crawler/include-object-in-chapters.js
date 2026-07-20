@@ -1,29 +1,38 @@
 //  node include-object-in-chapters.js ./src
 
 const fs = require('fs');
-const folder = process.argv[2];
+const argFolder = process.argv[2];
 
 function start() {
-  const itens = fs.readdirSync(folder);
-  itens.forEach(async (item) => {
-    const stat = fs.statSync(`${folder}/${item}`)
+  const itens = fs.readdirSync(argFolder);
+  itens.forEach(async (subFolder) => {
+    const stat = fs.statSync(`${argFolder}/${subFolder}`);
 
-    if (stat.isDirectory()) {
+    if (!stat.isDirectory()) {
       return;
     }
 
-    if (/\.json$/.test(item)) {
-      console.info(`:: writting chapters object in "${folder}/${item}"`);
-      const fileContent = fs.readFileSync(`${folder}/${item}`);
-      const jsonContent = JSON.parse(fileContent);
-      jsonContent.chapters = jsonContent.chapters.map((verses, index) => {
-        return {
-          chapter: index + 1,
-          verses
-        };
-      });
-      fs.writeFileSync(`${folder}/${item}`, JSON.stringify(jsonContent));
-    }
+    console.info(`:: reading folder "${argFolder}/${subFolder}"`);
+    const files = fs.readdirSync(`${argFolder}/${subFolder}`);
+    files.forEach((file) => {
+
+      if (fs.statSync(`${argFolder}/${subFolder}/${file}`).isDirectory()) {
+        return;
+      }
+
+      if (/\.json$/.test(file)) {
+        const fileContent = fs.readFileSync(`${argFolder}/${subFolder}/${file}`);
+        const jsonContent = JSON.parse(fileContent);
+        jsonContent.chapters = jsonContent.chapters.map((verses, index) => {
+          return {
+            chapter: index + 1,
+            verses
+          };
+        });
+
+        fs.writeFileSync(`${argFolder}/${subFolder}/${file}`, JSON.stringify(jsonContent));
+      }
+    });
   });
 }
 
