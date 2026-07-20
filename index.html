@@ -8,6 +8,7 @@
 
     <script>
       let currentLoadedBook = null;
+      //  TODO: precisa carregar este objeto do repository.json
       const translations = [
         {
           "name": "Português",
@@ -1150,7 +1151,7 @@
           const selectedChapter = Number(chapterInput.value) - 1;
 
           let html = '';
-          currentLoadedBook.chapters[selectedChapter].forEach(verse => {
+          currentLoadedBook.chapters[selectedChapter].verses.forEach(verse => {
             html += `<li><sup class='n'>${verse.verse}</sup>${verse.text}</li>`;
           });
           document.getElementById('versos').innerHTML = html;
