@@ -37,3 +37,4 @@
 [ ] - Capítulos 4 não encontrado no livro 1JO na tradução "svd";
 [ ] - Capítulos 5 não encontrado no livro 1JO na tradução "svd";
 [ ] - Remover os livros que não pertencem a traduções (como o antigo testamento no textus receptus e o novo testamento no stuttgartensia);
+[ ] - Fazer com que o index.html leia a partir do repository.json
