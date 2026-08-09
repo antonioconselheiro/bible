@@ -24,24 +24,16 @@ function start() {
         const fileContent = fs.readFileSync(`${argFolder}/${subFolder}/${file}`);
         const jsonContent = JSON.parse(fileContent);
         jsonContent.chapters = jsonContent.chapters.map((chapter, index) => {
+          let verseNumber = undefined;
           chapter.verses = chapter.verses.map(verse => {
-            if (typeof verse.verse === 'string') {
-              return {
-                verse: {
-                  start: Number(verse.verse),
-                  end: Number(verse.verse)
-                },
-                text: verse.text
-              };
+            if (verseNumber === undefined) {
+              verseNumber = Number(verse.verse.start);
             } else {
-              return {
-                verse: {
-                  start: verse.verse.start,
-                  end: verse.verse.end
-                },
-                text: verse.text
-              };
+              verseNumber++;
             }
+
+            verse.verse = verseNumber;
+            return verse;
           });
 
           return chapter;

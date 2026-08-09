@@ -1152,14 +1152,7 @@
 
           let html = '';
           currentLoadedBook.chapters[selectedChapter].verses.forEach(verse => {
-            let verseNumber = '';
-            if (verse.verse.start !== verse.verse.end) {
-              verseNumber = `${verse.verse.start}-${verse.verse.end}`;
-            } else {
-              verseNumber = `${verse.verse.start}`;
-            }
-
-            html += `<li><sup class='n'>${verseNumber}</sup>${verse.text}</li>`;
+            html += `<li><sup class='n'>${verse.verse}</sup>${verse.text}</li>`;
           });
           document.getElementById('versos').innerHTML = html;
         };
